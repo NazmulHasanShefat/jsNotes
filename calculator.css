@@ -59,6 +59,9 @@ body{
     transition: .15s ease-in-out;
     border-radius: 5px;
 }
+.btn:focus{
+    border:1px solid #fff;
+}
 .zero{
     grid-column: span 2;
 }
@@ -69,6 +72,9 @@ body{
     grid-column: span 1;
     background-color: rgb(161, 1, 1);
 }
+.Btn-eqal{
+    grid-row: span 2;
+}
 .btn:hover{
     background-color: #3f485eb9;
 }
@@ -76,7 +82,7 @@ body{
     background-color: #8c21c2be;
 }
 .btn-oparetor:focus{
-    background-color: #8c21c2be;
+    border: 1px solid #fff;
 }
 .ac:hover{
     background-color: rgb(116, 1, 1);

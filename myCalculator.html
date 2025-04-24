@@ -13,42 +13,52 @@
         <input type="text" class="display">
         <div class="buttons">
             <button class="btn ac btn-oparetor">AC</button>
-            <button class="btn btn-oparetor">%</button>
-            <button class="btn btn-oparetor">/</button>
             <button class="btn bk btn-oparetor">DEL</button>
+            <button class="btn btn-oparetor">%</button>
+            <button class="btn bk btn-oparetor">M+</button>
+            <button class="btn bk btn-oparetor">M-</button>
+            <button class="btn bk btn-oparetor">MRC</button>
+            <button class="btn btn-oparetor">/</button>
+            <button class="btn btn-oparetor">*</button>
             <button class="btn btn-number">7</button>
             <button class="btn btn-number">8</button>
             <button class="btn btn-number">9</button>
-            <button class="btn btn-oparetor">*</button>
+            <button class="btn btn-oparetor">-</button>
             <button class="btn btn-number">4</button>
             <button class="btn btn-number"> 5</button>
             <button class="btn btn-number">6</button>
-            <button class="btn btn-oparetor">-</button>
+            <button class="btn btn-oparetor">+</button>
             <button class="btn btn-number">1</button>
             <button class="btn btn-number">2</button>
             <button class="btn btn-number">3</button>
-            <button class="btn btn-oparetor">+</button>
+            <button class="btn btn-oparetor Btn-eqal">=</button>
             <button class="btn zero btn-number">0</button>
             <button class="btn btn-number">.</button>
-            <button class="btn btn-oparetor">=</button>
         </div>
       </div>
     </div>
   </body>
+
+
+
   <script>
-
-
-
-
-
     let display = document.querySelector(".display");
     let currentInput = "";
     let prevInput = [];
+
+
+    let setLocal = ""
+    let storeLocal = [];
+
+    let MplusValues = "";
 
     let buttonAll = document.querySelectorAll(".btn");
     buttonAll.forEach(btns=>{
       btns.addEventListener("click",(e)=>{
         if(e.target.innerText == "="){
+          // eval() method can convert string to number or string to code;
+          // eval() method দিয়ে যেকোন string কে Number এ convert করা যায় । এজন্য সেই string 
+          // দিয়ে যেকোন Mathamathical Oparetion kora zay
           currentInput = eval(currentInput);
           display.value = currentInput;
         }else if(e.target.innerText == "AC"){
@@ -60,6 +70,25 @@
           currentInput = currentInput.substring(0, currentInput.length -1 );
           // এইখানে বালা হয়েছে 0 থেকে index 
           display.value = currentInput;
+        }else if(e.target.innerText == "%"){
+          currentInput = eval(currentInput);
+          display.value = currentInput;
+        }else if(e.target.innerText == "M+"){
+           currentInput += "+" + setLocal  // adding current input with plus sign set current vaue in setLocal variable
+           storeLocal.push(currentInput);  //setLocal is an array variable that's why setLocal এর ভিতরে current input value set করে দেওয়া হলো array হিসাবে । 
+           currentInput = ""; //M+ এ ক্লিক করার সাথে সাথে current input box কে ফাকা করে দেওয়া হলো নতুন number বসানোর জন্য। 
+           console.log(storeLocal);
+        }else if(e.target.innerText == "MRC"){
+          let lastIndexArr = storeLocal.length - 1; // সেট setLocal array এর লাস্ট index number খুজে নেওয়া হলো 
+              for(let m of storeLocal){
+                  MplusValues += m; // MplusValue te সব array er value কে MplusValue নামক variable এ store করা হলো 
+              }// loop চালিয়ে array er value গুলো নেওয়া হলো, 
+
+        let FinalMplus_num = MplusValues.substring(0, MplusValues.length-1); //arry er শেষে যে + sign রয়ে গেছে সেই (+) sign remove করা হলো সঠিক calculation এর জন্য । 
+        console.log(FinalMplus_num);
+        let LastMPlusResult = eval(FinalMplus_num);
+        console.log(LastMPlusResult);
+        display.value = LastMPlusResult;
         }
         else{
           currentInput += e.target.innerText;
