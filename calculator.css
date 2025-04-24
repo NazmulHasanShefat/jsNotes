@@ -78,12 +78,24 @@ body{
 .btn:hover{
     background-color: #3f485eb9;
 }
+.btn:active{
+    background-color: #525c75b9;
+
+}
 .btn-oparetor:hover{
     background-color: #8c21c2be;
 }
 .btn-oparetor:focus{
     border: 1px solid #fff;
 }
+.btn-oparetor:active{
+    background-color: #7214a1be;
+    border: 1px solid #fff;
+}
 .ac:hover{
     background-color: rgb(116, 1, 1);
+}
+.ac:active{
+    background-color: rgb(163, 2, 2);
+    
 }
