@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="calculator.css" />
+    <title>Calculator</title>
+  </head>
+
+  <body>
+    <div class="calculator-container">
+        <div class="calculator">
+        <input type="text" class="display">
+        <div class="buttons">
+            <button class="btn ac btn-oparetor">AC</button>
+            <button class="btn btn-oparetor">%</button>
+            <button class="btn btn-oparetor">/</button>
+            <button class="btn bk btn-oparetor">DEL</button>
+            <button class="btn btn-number">7</button>
+            <button class="btn btn-number">8</button>
+            <button class="btn btn-number">9</button>
+            <button class="btn btn-oparetor">*</button>
+            <button class="btn btn-number">4</button>
+            <button class="btn btn-number"> 5</button>
+            <button class="btn btn-number">6</button>
+            <button class="btn btn-oparetor">-</button>
+            <button class="btn btn-number">1</button>
+            <button class="btn btn-number">2</button>
+            <button class="btn btn-number">3</button>
+            <button class="btn btn-oparetor">+</button>
+            <button class="btn zero btn-number">0</button>
+            <button class="btn btn-number">.</button>
+            <button class="btn btn-oparetor">=</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let display = document.querySelector(".display");
+    let currentInput = "";
+    let prevInput = [];
+
+    let buttonAll = document.querySelectorAll(".btn");
+    buttonAll.forEach(btns=>{
+      btns.addEventListener("click",(e)=>{
+        if(e.target.innerText == "="){
+          currentInput = eval(currentInput);
+          display.value = currentInput;
+        }else if(e.target.innerText == "AC"){
+          currentInput = "";
+          display.value = currentInput;
+        }else if(e.target.innerText == "DEL"){
+          // এঈ substring() method string কে array এর মতো index হিসাবে string কে Manage করতে পারে।
+          // string er প্রত্যেকটা letter ke index হিসাবে গননা করে । 
+          currentInput = currentInput.substring(0, currentInput.length -1 );
+          // এইখানে বালা হয়েছে 0 থেকে index 
+          display.value = currentInput;
+        }
+        else{
+          currentInput += e.target.innerText;
+          display.value = currentInput;
+        }
+      })
+    })
+  </script>
+</html>

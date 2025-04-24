@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Maps</h1>
+<h2>The Map.groupBy() Method</h2>
+
+<input type="number" id="input-box">
+<button type="button" id="btn">Create filter</button>
+<p id="demo"></p>
+
+<script>
+// Create an Array
+const mobiles = [
+  {name:"apple",price:300},
+  {name:"samgsung",price:250},
+  {name:"oppo",price:350},
+  {name:"vivo",price:100},
+  {name:"realmi",price:120},
+  {name:"mi",price:520},
+  {name:"walton",price:160},
+]
+
+let btn = document.querySelector("#btn");
+let inputfuild = document.querySelector("#input-box");
+
+btn.addEventListener("click", myfunction);
+
+function myfunction(){
+   let inputval = inputfuild.value;
+   console.log(inputval)
+   
+   function filterfunc({price}){
+    return price < inputval ? "ok" : "unabilabel";
+   }
+   let myresult = Map.groupBy(mobiles, filterfunc);
+   
+   let text = "This is you product <br>";
+   for(let x of myresult.get("ok")){
+      text += x.name + ":" + x.price + "<br>";
+   }
+   
+   text += "<br>This is other products <br>";
+   for(let x of myresult.get("unabilabel")){
+     text += x.name + ":" + x.price + "<br>";
+   }
+   document.querySelector("#demo").innerHTML = text;
+  }
+
+
+// console.log(result.get("ok"));
+</script>
+
+</body>
+</html>
