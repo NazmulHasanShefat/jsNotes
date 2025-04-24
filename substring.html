@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Strings</h1>
+<h2>The substring() Method</h2>
+
+<p>substring() extracts a part of a string:</p>
+
+<p class="mytext">this is a text</p>
+<p class="mytext"></p>
+
+<p id="demo"></p>
+<button>substrac</button>
+
+<script>
+   let text = document.querySelectorAll(".mytext");
+  // এঈ substring() method string কে array এর মতো index হিসাবে string কে Manage করতে পারে।
+          // string er প্রত্যেকটা letter ke index হিসাবে গননা করে । 
+   document.querySelector("button").addEventListener("click",()=>{
+       let mainText = text[0].innerHTML;
+       let x = mainText.substring(0, mainText.length-1);
+       let y = mainText.length;  //  getting string length
+       text[1].innerHTML = "this sentence length is: " + y;
+       text[0].innerHTML = x ;
+   })
+</script>
+
+</body>
+</html>
