@@ -5,6 +5,10 @@
 <h1>JavaScript Strings</h1>
 <h2>The substring() Method</h2>
 
+<p class="SubStr">This is subString text</p>
+<p class="SubStr">This is subString text</p>
+
+
 <p>substring() extracts a part of a string:</p>
 
 <p class="mytext">this is a text</p>
@@ -23,7 +27,31 @@
        let y = mainText.length;  //  getting string length
        text[1].innerHTML = "this sentence length is: " + y;
        text[0].innerHTML = x ;
-   })
+       
+       
+    })
+    
+    let myPtag = document.querySelectorAll("p");
+    
+    let myStr = myPtag[0].innerHTML;
+    let myslice = myPtag[1].innerHTML;
+
+    // What diffrents slice() or substring()
+    
+    //(-) substring 0 no index হিসাবে গননা করে।
+    //(-) slice 0 no index হিসাবে গননা করে না ।
+    
+    // const mySubStringText = myStr.substring(10,1); substring Argument e যদি বড় value প্রথমে থাকে 
+    // এবং ছোট value পরে থাকে  তাহলে  ছোট value এর থেকে বড় value এর index এর আগে পর্যন্ত 
+    // print kore debe .
+
+    //kintu slice method এ  myStr.substring(10,1) এইভাবে লিখালে কিছুই প্রিন্ট করবে না । 
+
+
+    const mySubStringText = myStr.substring(-4,8);
+    let mySliceText = myslice.substring(0);
+    console.log(mySubStringText);
+    console.log(mySliceText)
 </script>
 
 </body>
