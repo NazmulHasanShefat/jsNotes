@@ -10,31 +10,41 @@
   <body>
     <div class="calculator-container">
         <div class="calculator">
-        <input type="text" class="display">
+        <div class="mydisplay">
+          <div class="indicator-functions">
+            <p>M</p>
+          </div>
+          <input type="text" class="display">
+        </div>
         <div class="buttons">
             <button class="btn ac btn-oparetor">AC</button>
             <button class="btn bk btn-oparetor">DEL</button>
+            <button class="btn btn-oparetor">x²</button>
             <button class="btn btn-oparetor">%</button>
             <button class="btn bk btn-oparetor">M+</button>
             <button class="btn bk btn-oparetor">M-</button>
             <button class="btn bk btn-oparetor">MRC</button>
+            <button class="btn bk btn-oparetor">MC</button>
+            <button class="btn bk btn-oparetor">√</button>
+            <button class="btn bk btn-oparetor">Log</button>
+            <button class="btn bk btn-oparetor">π</button>
             <button class="btn btn-oparetor">/</button>
-            <button class="btn btn-oparetor">*</button>
             <button class="btn btn-number">7</button>
             <button class="btn btn-number">8</button>
             <button class="btn btn-number">9</button>
-            <button class="btn btn-oparetor">-</button>
+            <button class="btn btn-oparetor">*</button>
             <button class="btn btn-number">4</button>
             <button class="btn btn-number"> 5</button>
             <button class="btn btn-number">6</button>
-            <button class="btn btn-oparetor">+</button>
+            <button class="btn btn-oparetor">-</button>
             <button class="btn btn-number">1</button>
             <button class="btn btn-number">2</button>
             <button class="btn btn-number">3</button>
-            <button class="btn btn-oparetor Btn-eqal">=</button>
+            <button class="btn btn-oparetor">+</button>
             <button class="btn zero btn-number">0</button>
             <button class="btn btn-number">.</button>
-        </div>
+            <button class="btn btn-oparetor Btn-eqal">=</button>
+          </div>
       </div>
     </div>
   </body>
@@ -84,14 +94,18 @@
                   MplusValues += m; // MplusValue te সব array er value কে MplusValue নামক variable এ store করা হলো 
               }// loop চালিয়ে array er value গুলো নেওয়া হলো, 
 
-        let FinalMplus_num = MplusValues.substring(0, MplusValues.length-1); //arry er শেষে যে + sign রয়ে গেছে সেই (+) sign remove করা হলো সঠিক calculation এর জন্য । 
-        console.log(FinalMplus_num);
-        let LastMPlusResult = eval(FinalMplus_num);
-        console.log(LastMPlusResult);
-        display.value = LastMPlusResult;
+          let FinalMplus_num = MplusValues.substring(0, MplusValues.length-1); //arry er শেষে যে + sign রয়ে গেছে সেই (+) sign remove করা হলো সঠিক calculation এর জন্য । 
+          console.log(FinalMplus_num);
+          let LastMPlusResult = eval(FinalMplus_num);
+          console.log(LastMPlusResult);
+          display.value = LastMPlusResult;
+          
+        }else if(e.target.innerText == "x²"){
+          let sqir = display.value ** 2;
+          display.value = sqir;
         }
         else{
-          currentInput += e.target.innerText;
+          currentInput += e.target.innerText
           display.value = currentInput;
         }
       })
