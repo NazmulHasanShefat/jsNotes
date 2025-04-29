@@ -1,22 +1,12 @@
-class Car {
-    constructor(brand) {
-      this.carname = brand;
-    }
-    present() {
-      return 'I have a ' + this.carname;
-    }
-  }
-  
-  class Model extends Car {
-    constructor(brand, mod) {
-      super(brand);
-      this.model = mod;
-    }
-    show() {
-      return this.present() + ', it is a ' + this.model;
-    }
-  }
-  
-  let myCar = new Model("Ford", "Mustang");
+// Create an Array
+const myNumbers = [4, 1, -20, -7, 5, 9, -6];
 
-  console.log(myCar)
+function findpos(){
+  for(let x of myNumbers){
+    let pos = x;
+    if(pos <= 0){
+      console.log(pos);
+    }
+  }
+}
+findpos();
