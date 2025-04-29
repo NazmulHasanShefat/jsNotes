@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+       <div class="enroll-content">
+            <div class="form-heading text-center"><h1>Enroll now</h1></div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Your name</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Your name">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">city</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <button type="button" id="registration" class="btn btn-success w-100">Submit</button>
+        </div>
+
+        <!-- payment -->
+        <div class="d-none payment-tab container d-flex justify-content-center mt-5">
+            <div class="wrap-payment-tab">
+              <div class="scaliton-pay-tab">
+                <div class="card" aria-hidden="true" style="width: 18rem;">
+                 
+                  <div class="card-body">
+                    <h5 class="card-title placeholder-glow">
+                      <span class="placeholder col-6"></span>
+                    </h5>
+                    <p class="card-text placeholder-glow">
+                      <span class="placeholder col-7"></span>
+                      <span class="placeholder col-4"></span>
+                      <span class="placeholder col-4"></span>
+                      <span class="placeholder col-6"></span>
+                      <span class="placeholder col-8"></span>
+                    </p>
+                    <a class="btn btn-primary disabled placeholder col-6" aria-disabled="true"></a>
+                  </div>
+                </div>
+              </div>
+              <div class="main-pay_tab">
+                    <div class="card text-center" style="width: 18rem;">
+                      <div class="mb-3 p-3">
+                        <img src="https://freelogopng.com/images/all_img/1656234745bkash-app-logo-png.png" class="p-2" height="70px" width="70px" alt="">
+                        <!-- <label for="exampleFormControlInput1" class="form-label">Enter you bkash acount number</label> -->
+                        <input type="text" class="form-control" id="acount_number" placeholder="Enter bkash acount number">
+                        <p class="error_mobile"></p>
+                        <input type="number" class="form-control d-none" id="OTP" placeholder="Enter OTP">
+                        <p class="error_otp" style="color:red"></p>
+                        <p class="card-title p-2">Need any help visit <a href="#">Now</a></p>
+                        <a href="#" class="btn btn-danger">Close</a>
+                        <a href="#" class="btn btn-success" id="submit-payment">Next</a>
+                      </div>
+                    </div>
+               </div>
+            </div>
+        </div>
+
+
+        <!-- course progress -->
+         <div class="d-none course d-flex justify-content-center">
+              <div class="wrap-course-content">
+                <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="card-link" id="start-learning">Start lerning</a>
+                    <a href="#" class="card-link">lern more</a>
+                  </div>
+                </div>
+                <div class="card d-none" style="width: 18rem;">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">An item</li>
+                    <li class="list-group-item">A second item</li>
+                    <li class="list-group-item">A third item</li>
+                  </ul>
+                </div>
+                <div class="card d-none" style="width: 18rem;">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">An item</li>
+                    <li class="list-group-item">A second item</li>
+                    <li class="list-group-item">A third item</li>
+                  </ul>
+                </div>
+              </div>
+         </div>
+
+         <div class="d-none certificate">
+          <div class="card text-center">
+            <div class="card-header">
+              Featured
+            </div>
+            <div class="card-body">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbpFatA5pEMzr9o_fx1fgvhzHaggzjU0BlvIa6WNsK014HgukmqwPKCxY&usqp=CAE&s" height="50px" width="50px" alt="">
+
+              <h5 class="card-title d-flex justify-content-center align-items-center py-1">Congatulation  
+              </h5>
+              <img src="https://marketplace.canva.com/EAF7ijX8ZNQ/2/0/1600w/canva-cream-bordered-appreciation-certificate-q6rkKUKUUH4.jpg" height="200px" width="300px" alt="">
+              <p class="card-text p-2" style="font-size: .8rem;">Congratulations on completing the course! We're so incredibly proud of your dedication and hard work. This achievement marks a significant milestone in your learning journey, and we commend your commitment to expanding your knowledge and skills. Well done!.</p>
+              <a href="#" class="btn btn-primary">Download Certificate</a>
+            </div>
+          </div>
+         </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
