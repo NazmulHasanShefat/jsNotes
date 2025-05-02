@@ -38,7 +38,7 @@
         </div>
         <h1 class="text-white">your producs</h1>
         <section class="allproducts row" style="width: 90%; height: max-content;">
-            <div class="product p-2 col-3">
+            <div class="products p-2 col-3">
                 <div class="card" style="width: 18rem;">
                     <img src="https://www.startech.com.bd/image/cache/catalog/desktop-pc/ryzen-pc/ryzen-7-7700/ryzen-7-7700-01-500x500.webp" class="card-img-top" alt="...">
                     <div class="card-body text-center">
@@ -47,49 +47,7 @@
                       <a href="#" class="btn btn-primary"><span>200</span><span>TK</span></a>
                     </div>
                   </div>
-            </div>
-            <div class="product p-2 col-3">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://www.startech.com.bd/image/cache/catalog/desktop-pc/ryzen-pc/ryzen-7-7700/ryzen-7-7700-01-500x500.webp" class="card-img-top" alt="...">
-                    <div class="card-body text-center">
-                      <h5 class="card-title">AMD MOTHER BORD</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary"><span>200</span><span>TK</span></a>
-                    </div>
-                  </div>
-            </div>
-            <div class="product p-2 col-3">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://www.startech.com.bd/image/cache/catalog/desktop-pc/ryzen-pc/ryzen-7-7700/ryzen-7-7700-01-500x500.webp" class="card-img-top" alt="...">
-                    <div class="card-body text-center">
-                      <h5 class="card-title">AMD MOTHER BORD</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary"><span>200</span><span>TK</span></a>
-                    </div>
-                  </div>
-            </div>
-            <div class="product p-2 col-3">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://www.startech.com.bd/image/cache/catalog/desktop-pc/ryzen-pc/ryzen-7-7700/ryzen-7-7700-01-500x500.webp" class="card-img-top" alt="...">
-                    <div class="card-body text-center">
-                      <h5 class="card-title">AMD MOTHER BORD</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary"><span>200</span><span>TK</span></a>
-                    </div>
-                  </div>
-            </div>
-            <div class="product p-2 col-3">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://www.startech.com.bd/image/cache/catalog/desktop-pc/ryzen-pc/ryzen-7-7700/ryzen-7-7700-01-500x500.webp" class="card-img-top" alt="...">
-                    <div class="card-body text-center">
-                      <h5 class="card-title">AMD MOTHER BORD</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary"><span>200</span><span>TK</span></a>
-                    </div>
-                  </div>
-            </div>
-          
-            
+                </div>
             </div>
 
             <h1 class="text-center text-white">Other product</h1>
@@ -97,9 +55,11 @@
     </main>
     <script>
       let form = document.querySelector("form");
+      let product_container = document.querySelector(".products");
 
-
-     const Products = new Map();
+     const Products = [
+           {}
+     ]
 
       form.addEventListener("submit",(e)=>{
         e.preventDefault();
@@ -108,14 +68,29 @@
         let Product_catagory = document.querySelector("#catagory").value;
         let Product_price = document.querySelector("#price").value;
         
-        Products.set("Name",Product_Name);
-        Products.set("Description",Product_description);
-        Products.set("Catagory",Product_catagory);
-        Products.set("price",Product_price);
+        Products.push(
+          {
+            name: Product_Name,
+            description: Product_description,
+            catagory: Product_catagory,
+            price: Product_price
+          }
+        )
 
-        console.log(Products);
-        let dp_p_name = Products.get("Name");
-        console.log(dp_p_name);
+         for(let x of Products){
+          product_container.innerHTML = `
+          
+           <div class="card" style="width: 18rem;">
+                    <img src="https://www.startech.com.bd/image/cache/catalog/desktop-pc/ryzen-pc/ryzen-7-7700/ryzen-7-7700-01-500x500.webp" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">${x.name}</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary"><span>${x.price}</span><span>TK</span></a>
+                    </div>
+                  </div>
+                </div>
+          `;
+         }
 
       })
     

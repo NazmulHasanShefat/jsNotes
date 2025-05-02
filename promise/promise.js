@@ -16,7 +16,7 @@ promise
         console.log(value);
     })
     .catch((error)=>{
-        console.log("something is wrong error !")
+        console.log(error)
     })
 
 console.log("test 3 prosessing...")

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom styles</title>
+    <style>
+        .animator-box{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="position: relative; width: 400px; height: 400px; background-color: green; margin: 50px auto;">
+        <div class="animator-box" style="width: 100px; height: 100px; background-color: aqua;"></div>
+    </div>
+    <button type="button" style="margin:0 auto;">
+        move this element
+    </button>
+    <script>
+       let btn = document.querySelector("button");
+       let box = document.querySelector(".animator-box");
+       btn.addEventListener("click",()=>{
+        let id = setInterval(dropDwun,15);
+        let movement = 0;
+        function dropDwun(){
+            if(movement == 299 && navigator.cookieEnabled == true){
+                clearInterval(id);
+                btn.innerHTML = "there is same cookies";
+            }else{
+                btn.innerHTML = "there is no cookies";
+                movement++
+                box.style.top = movement + "px";
+                box.style.left = movement + "px";
+            }
+        }
+       })
+    </script>
+</body>
+</html>
