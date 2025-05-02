@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>append child</title>
+</head>
+<body>
+    <div class="container">
+        <p>This is old one</p>
+        <p>this is old 2</p>
+        <p>this is old 3</p>
+        <p>this is old 4</p>
+        <p style="color:red">Theis  is before element element</p>
+        <p style="color:blue">Theis  is after element</p>
+    </div>
+    <button type="button">append a element</button>
+    <script>
+        let btn = document.querySelector("button");
+        btn.addEventListener("click",()=>{
+            let container = document.querySelector(".container");
+            let newParagrap = document.createElement("div");
+            let getContainer_fristElement = container.firstElementChild;
+            let getContainer_lastElement = container.lastElementChild;
+            let getContainer_any_Element = container.children[1];// find with index number
+            let getContainer_1st_Element = container.children[0];// find with index number
+            // console.log(getContainer_lastElement);
+            // console.log(getContainer_any_Element);
+            newParagrap.innerHTML = "This is a new paragrap";
+            container.insertBefore(newParagrap, getContainer_1st_Element);
+            // প্রথন argument hobe যে element আপনি নতুন তৈরি করেছেন এবং দ্বিতীয় argument hobe 
+            // যার আগে বা প্ররে অপনি element টা কে বসাতে চান। 
+
+
+            // kono ekta element ke upore ba niche newar jonno
+            let beforeElement = container.children[5];
+            let afterElement = container.children[6]
+            afterElement.insertAdjacentElement("afterend", beforeElement)
+        })
+    </script>
+</body>
+</html>
