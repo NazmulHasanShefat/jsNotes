@@ -21,3 +21,10 @@ function createWorder(){
         alert("your browser dosen't sapport Worker");
     }
 }
+
+function clearWorder(){
+    if(typeof Worker !== "undefined"){
+        w.terminate();
+        w = undefined;
+    }
+}
