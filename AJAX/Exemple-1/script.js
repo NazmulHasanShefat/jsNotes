@@ -27,7 +27,7 @@ function sendRequest(method, url, data) {
         // when you want send data you use xhr.send(data) this data variable
         xhr.send(data)
     });
-    return mypromise
+    return mypromise    ``
 }
 function getData() {
     sendRequest("GET", "https://jsonplaceholder.typicode.com/todos/1").then(responseData => {
