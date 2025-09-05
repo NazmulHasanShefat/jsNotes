@@ -34,7 +34,6 @@
    ```
 </details>
 
-
 <details>
    <summary>Array destructureing</summary>
 
@@ -43,6 +42,37 @@
    const [a, a, c, d] = arr
    console.log(a) // a is 1 and b is 2 .....
    ```
+</details>
+
+<details>
+   <summary>Import Export</summary>
+
+  `main.js`
+   ```js
+  export const a = 10
+  export const pi = 3.1416
+
+  const parson = {
+    name: "jone",
+    age:20
+  }
+  export default parson
+   ```
+  `other.js`
+   ```js
+   import {a, pi} from "./main.js"
+   // যদি a and pi কে other variable e store করতে চান তহলে 
+   import {a as mya, pi as myPi} from "./main.js"
+   // যদি সব একবারে পেতে চান যা যা export করা হয়েছে তাহলে
+   import * all from "./main.js"
+   //imprt parson named user and other variable in curlybrasis{other...}
+   import user { pi, a, ....} from "./main.js"
+
+   console.log(user)
+   console.log(all.a)
+   console.log(all.pi)
+   ```
+
 </details>
 
 </details>
