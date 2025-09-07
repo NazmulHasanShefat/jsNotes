@@ -199,6 +199,9 @@ let input = document.getElementById("myinput");
 let isLoded = false;
 let suggetionList = [];
 
+window.onload = ()=>{
+    input.focus();
+}
 
 let list_container = document.createElement("div");
 list_container.setAttribute("class","suggetions-container");
@@ -215,7 +218,7 @@ input.addEventListener("input",()=>{
         show_result(suggetionList)
     }
     if(!suggetionList.length){
-        list_container.innerHTML = "no result"
+        list_container.innerHTML = `<div class="autocomplete-items" style="font-size:1.4rem; opacity:0.4;">No relult</div>`
     }
 })
 
@@ -228,5 +231,9 @@ function show_result(suggetionList){
             }
         }).join("")
         list_container.innerHTML = content;
+    }if(inp_val.length == 0){
+        // list_container.innerHTML = `<div class="autocomplete-items" style="font-size:1.4rem">No relult</div>`;
+        // console.log(inp_val.length)
+        container_main.removeChild(list_container);
     }
 }

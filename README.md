@@ -77,3 +77,7 @@
    ```
 
 </details>
+
+<details>
+ <summary>String and String method</summary>
+</details>
