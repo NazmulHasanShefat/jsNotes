@@ -1,10 +1,10 @@
 ***Welcome to js note***
 <details>
    <summary>Object methods</summary>
-
-
 <details>
-   <summary>Object destructureing</summary>
+
+- 
+- <summary>Object destructureing</summary>
 
    ```js
     const parson = {
