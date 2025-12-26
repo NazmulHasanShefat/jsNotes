@@ -44,6 +44,29 @@
    const [a,,,b] // a1,2,3,b4 like this
    // এভাবে স্কিপ করে যেতে পারেন কমার মাধ্যমে
 
+   // for nested array
+   const arr = [1, 2, 3, 4,[100,200,500],5,6,7,8];
+   const [,,,,[a,,b]] = arr
+   console.log(a,b)
+
+   ```
+</details>
+
+<details>
+   <summary>Array.reduce method</summary>
+
+   ```js
+   const numbers = [1,2,3,4,5,6];
+
+   const sum = numbers.reduce((prev,current)=>{
+    const value = prev + current
+    const total = value
+    const parcentage = (95 / 100) * total
+    return parcentage
+   })
+
+   console.log(sum);
+
    ```
 </details>
 
