@@ -41,6 +41,11 @@
    const arr = [1, 2, 3, 4];
    const [a, a, c, d] = arr
    console.log(a) // a is 1 and b is 2 .....
+
+   // যদি 1 ke (a) er vitor niye zete chan and 4 ke (b) er modde niye zete chan tohole
+   const [a,,,b] // a1,2,3,b4 like this
+   // এভাবে স্কিপ করে যেতে পারেন কমার মাধ্যমে
+
    ```
 </details>
 
