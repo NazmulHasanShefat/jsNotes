@@ -111,46 +111,49 @@ const countriesWithCodes = [
 ];
 const btn_next = document.querySelector(".btn_next");
 const btn_prev = document.querySelector(".btn_prev");
-//initial value
+// initaial value 
 const perPage = 5;
 let start = 0;
-let y = perPage;
 
 //next event
-btn_next.addEventListener("click", () => {
-    if (y < countriesWithCodes.length) {
-        start += perPage;
-        y = start + perPage;
-        renderCountryListOnUI();
-        console.log("plus", start, y)
-    }
-})
+if(btn_next){
+    btn_next.addEventListener("click", () => {
+        if (start + perPage < countriesWithCodes.length) {
+            start += perPage;
+            renderCountryListOnUI();
+        }
+    })
+}
 
 //prev event
-btn_prev.addEventListener("click", () => {
-    if (start >= 5) {
-        start -= perPage;
-        y -= perPage;
-        console.log("minus", start, y)
-        renderCountryListOnUI();
-    }
-})
+if(btn_prev){
+    btn_prev.addEventListener("click", () => {
+        if (start > 0) {
+            start -= perPage;
+            renderCountryListOnUI();
+        }
+    })
+}
 
 // reder list on ui
 const wrap_table_row = document.querySelector(".wrap_table_row");
 function renderCountryListOnUI() {
-    const table_content = countriesWithCodes.slice(start, y);
-    let html = "";
-    table_content.forEach(item => {
-        html += `
-          <div class="table-row">
-                    <div class="table-cell" data-label="Column 1">${item.name}</div>
-                    <div class="table-cell" data-label="Column 2">${item.code}</div>
-            </div>
-        `;
-    })
-    wrap_table_row.innerHTML = html;
-    y >= countriesWithCodes.length ? btn_next.classList.add("btn_disabled") : btn_next.classList.remove("btn_disabled");
-    start <= 0 ? btn_prev.classList.add("btn_disabled") : btn_prev.classList.remove("btn_disabled")
+    let end = start + perPage;
+    const table_content = countriesWithCodes.slice(start, end);
+    console.log(start, end)
+    if(table_content.length){
+        wrap_table_row.innerHTML = table_content.map(item => `
+            <div class="table-row">
+                        <div class="table-cell" data-label="Column 1">${item.name}</div>
+                        <div class="table-cell" data-label="Column 2">${item.code}</div>
+                </div>
+            `).join("");
+            if(btn_next && btn_prev){
+                btn_prev.disabled = start === 0;
+            btn_next.disabled = end >= countriesWithCodes.length;
+            }
+    }else{
+        wrap_table_row.innerHTML = "data not found"
+    }
 }
 renderCountryListOnUI();

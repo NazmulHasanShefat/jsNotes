@@ -24,5 +24,5 @@ console.log(value)
 let negativeSlice = ["apple","mango","banana","kodma","borfi","anaya"];
 let newpositive = negativeSlice.slice(4,6);
 console.log(newpositive);
-let newNagative = negativeSlice.slice(2,4);
+let newNagative = negativeSlice.slice(4,2);
 console.log(newNagative);
