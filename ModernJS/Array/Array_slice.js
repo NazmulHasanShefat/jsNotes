@@ -10,7 +10,7 @@ const parson = {
     collage: "hariana"
 }
 
-let str = "i love soniya"
+let str = "i love javaScript"
 for(item of str){
    console.log(item);
 }
@@ -19,3 +19,10 @@ let keys = Object.keys(parson);
 let value = Object.values(parson);
 
 console.log(value)
+
+
+let negativeSlice = ["apple","mango","banana","kodma","borfi","anaya"];
+let newpositive = negativeSlice.slice(4,6);
+console.log(newpositive);
+let newNagative = negativeSlice.slice(2,4);
+console.log(newNagative);

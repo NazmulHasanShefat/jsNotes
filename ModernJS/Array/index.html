@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Container styling */
+        .responsive-table {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            font-family: sans-serif;
+        }
+
+        /* Row setup */
+        .table-row {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+
+        /* Cell setup */
+        .table-cell {
+            flex: 1;
+            padding: 12px;
+            text-align: left;
+        }
+
+        /* Header specific styling */
+        .header {
+            background-color: #008127;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        /* Responsive Breakpoint */
+        @media (max-width: 600px) {
+            .table-row {
+                flex-direction: column;
+                /* Stacks the columns vertically */
+            }
+
+            .table-cell {
+                border-bottom: 1px solid #eee;
+            }
+
+            /* Optional: Hide the original header row on mobile if using labels */
+            .table-row:first-child {
+                display: none;
+            }
+
+            /* Optional: Add labels before data on mobile */
+            .table-cell::before {
+                content: attr(data-label);
+                font-weight: bold;
+                display: block;
+                margin-bottom: 5px;
+                color: #888;
+            }
+        }
+        .btn_prev, .btn_next{
+            padding: 4px 12px;
+            border: none;
+            outline: none;
+            margin: 5px;
+            cursor: pointer;
+            background-color: green;
+            color: #fff;
+            &:active{
+                transform: scale(0.92);
+            }
+        }
+        .btn_disabled{
+            background-color: gray;
+            &:active{transform: scale(1);}
+        }
+    </style>
+</head>
+
+<body>
+    <div class="responsive-table">
+        <div class="table-row">
+            <div class="table-cell header"> country</div>
+            <div class="table-cell header">country code</div>
+        </div>
+        <div class="wrap_table_row">
+           
+        </div>
+    </div>
+    <div style="display: flex; justify-content: center;">
+        <button class="btn_prev">prev</button>
+        <button class="btn_next">Next</button>
+
+    </div>
+    <script src="./pagination.js"></script>
+</body> 
+</html>

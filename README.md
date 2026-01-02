@@ -105,5 +105,17 @@
 </details>
 
 <details>
- <summary>String and String method</summary>
+ <summary>JavaScript Reguler Exp</summary>
+
+ ```js
+    const display = document.querySelector(".display");
+    const inputfield = document.querySelector(".input-field");
+
+   function runExp(){
+       const inputfieldvalue = inputfield.value;
+       // find number method 
+       const patern = /[0-9]/g;
+       display.innerHTML = inputfieldvalue.match(patern);
+   }
+ ```
 </details>
