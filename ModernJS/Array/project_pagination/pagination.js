@@ -63,7 +63,16 @@ function renderPaginationkeys(){
     for(let i=0; i<countriesWithCodes.length; i+=perPage){
         const btn = document.createElement("button");
         btn.setAttribute("type","button");
-        btn.innerHTML = i + 1;
         paginate_numbers_container.appendChild(btn);
+        const btn_paginate = paginate_numbers_container.querySelectorAll("button");
+        btn.innerHTML = btn_paginate.length;
+        if(i === start){
+            btn.classList.add("active");
+        }
+        btn.addEventListener("click",()=>{
+            start = i;
+            renderCountryListOnUI();
+            renderPaginationkeys();
+        })
     }
 }
