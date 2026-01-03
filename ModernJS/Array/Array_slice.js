@@ -26,3 +26,5 @@ let newpositive = negativeSlice.slice(4,6);
 console.log(newpositive);
 let newNagative = negativeSlice.slice(4,2);
 console.log(newNagative);
+const lastElemtn = negativeSlice.pop();
+console.log(lastElemtn);
