@@ -2,7 +2,7 @@ import countriesWithCodes from "./jsContent.js";
 const btn_next = document.querySelector(".btn_next");
 const btn_prev = document.querySelector(".btn_prev");
 const show_perpage = document.querySelector("#show_perpage");
-
+const paginate_numbers_container = document.querySelector(".paginate_numbers_container");
 // initaial value 
 let perPage = 5;
 let start = 0;
@@ -45,10 +45,8 @@ function renderCountryListOnUI() {
                         <div class="table-cell" data-label="Column 2">${item.code}</div>
                 </div>
             `).join("");
-        
-            
-       const last = table_content
-       console.log(last);
+
+            renderPaginationkeys();
 
         if (btn_next && btn_prev) {
             btn_prev.disabled = start === 0;
@@ -59,3 +57,13 @@ function renderCountryListOnUI() {
     }
 }
 renderCountryListOnUI();
+function renderPaginationkeys(){
+    paginate_numbers_container.innerHTML = "";
+
+    for(let i=0; i<countriesWithCodes.length; i+=perPage){
+        const btn = document.createElement("button");
+        btn.setAttribute("type","button");
+        btn.innerHTML = i + 1;
+        paginate_numbers_container.appendChild(btn);
+    }
+}
