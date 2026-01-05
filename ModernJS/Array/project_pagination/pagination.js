@@ -56,23 +56,54 @@ function renderCountryListOnUI() {
         wrap_table_row.innerHTML = "data not found"
     }
 }
+
 renderCountryListOnUI();
+
+
 function renderPaginationkeys(){
     paginate_numbers_container.innerHTML = "";
 
-    for(let i=0; i<countriesWithCodes.length; i+=perPage){
-        const btn = document.createElement("button");
-        btn.setAttribute("type","button");
-        paginate_numbers_container.appendChild(btn);
-        const btn_paginate = paginate_numbers_container.querySelectorAll("button");
-        btn.innerHTML = btn_paginate.length;
-        if(i === start){
+    console.log(start, perPage)
+    const currentPage = Math.floor(start / perPage);
+    console.log(currentPage);
+    const total_page = Math.ceil(countriesWithCodes.length / perPage);
+    console.log(total_page);
+    // 3 button window 
+    let startPage = Math.max(0, currentPage - 1);
+    let endPage = Math.min(total_page - 1, startPage + 1);
+
+    if(endPage - startPage < 2){
+        startPage = Math.max(0, endPage -2)
+    }
+    for(let i = startPage; i <= endPage; i++){
+        const btn = document.createElement("button")
+        btn.innerHTML = i + 1;
+        paginate_numbers_container.appendChild(btn)
+
+        if(i === currentPage){
             btn.classList.add("active");
         }
         btn.addEventListener("click",()=>{
-            start = i;
+            start = i ;
             renderCountryListOnUI();
             renderPaginationkeys();
         })
     }
+
+
+    // for(let i=0; i<countriesWithCodes.length; i+=perPage){
+    //     const btn = document.createElement("button");
+    //     btn.setAttribute("type","button");
+    //     paginate_numbers_container.appendChild(btn);
+    //     const btn_paginate = paginate_numbers_container.querySelectorAll("button");
+    //     btn.innerHTML = btn_paginate.length;
+    //     if(i === start){
+    //         btn.classList.add("active");
+    //     }
+    //     btn.addEventListener("click",()=>{
+    //        start = i
+    //         renderCountryListOnUI();
+    //         renderPaginationkeys();
+    //     })
+    // }
 }

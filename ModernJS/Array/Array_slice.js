@@ -29,10 +29,5 @@ console.log(newNagative);
 const lastElemtn = negativeSlice.pop();
 console.log(lastElemtn);
 
-const myArr = [1, 2, 3, 4, 5,6];
-const newArr = myArr.flatMap(x => [ x / 2]);
-// console.log(myArr)
-// console.log(newArr)
-
 
 
