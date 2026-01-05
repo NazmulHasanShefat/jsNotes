@@ -84,26 +84,27 @@ function renderPaginationkeys(){
             btn.classList.add("active");
         }
         btn.addEventListener("click",()=>{
-            start = i ;
+            start = i * perPage;
             renderCountryListOnUI();
-            renderPaginationkeys();
+           
         })
     }
-
-
+    
+    
     // for(let i=0; i<countriesWithCodes.length; i+=perPage){
-    //     const btn = document.createElement("button");
-    //     btn.setAttribute("type","button");
-    //     paginate_numbers_container.appendChild(btn);
-    //     const btn_paginate = paginate_numbers_container.querySelectorAll("button");
-    //     btn.innerHTML = btn_paginate.length;
-    //     if(i === start){
-    //         btn.classList.add("active");
-    //     }
-    //     btn.addEventListener("click",()=>{
-    //        start = i
-    //         renderCountryListOnUI();
-    //         renderPaginationkeys();
-    //     })
-    // }
-}
+        //     const btn = document.createElement("button");
+        //     btn.setAttribute("type","button");
+        //     paginate_numbers_container.appendChild(btn);
+        //     const btn_paginate = paginate_numbers_container.querySelectorAll("button");
+        //     btn.innerHTML = btn_paginate.length;
+        //     if(i === start){
+            //         btn.classList.add("active");
+            //     }
+            //     btn.addEventListener("click",()=>{
+                //        start = i
+                //         renderCountryListOnUI();
+                //         renderPaginationkeys();
+                //     })
+                // }
+            }
+            
