@@ -8,7 +8,7 @@ let perPage = 5;
 let start = 0;
 
 
-show_perpage && show_perpage.addEventListener("input",(e)=>{
+show_perpage && show_perpage.addEventListener("input", (e) => {
     perPage = parseFloat(e.target.value);
     renderCountryListOnUI();
 })
@@ -46,7 +46,7 @@ function renderCountryListOnUI() {
                 </div>
             `).join("");
 
-            renderPaginationkeys();
+        renderPaginationkeys();
 
         if (btn_next && btn_prev) {
             btn_prev.disabled = start === 0;
@@ -60,7 +60,7 @@ function renderCountryListOnUI() {
 renderCountryListOnUI();
 
 
-function renderPaginationkeys(){
+function renderPaginationkeys() {
     paginate_numbers_container.innerHTML = "";
 
     console.log(start, perPage)
@@ -72,39 +72,38 @@ function renderPaginationkeys(){
     let startPage = Math.max(0, currentPage - 1);
     let endPage = Math.min(total_page - 1, startPage + 1);
 
-    if(endPage - startPage < 2){
-        startPage = Math.max(0, endPage -2)
+    if (endPage - startPage < 2) {
+        startPage = Math.max(0, endPage - 2)
     }
-    for(let i = startPage; i <= endPage; i++){
+    for (let i = startPage; i <= endPage; i++) {
         const btn = document.createElement("button")
         btn.innerHTML = i + 1;
         paginate_numbers_container.appendChild(btn)
 
-        if(i === currentPage){
+        if (i === currentPage) {
             btn.classList.add("active");
         }
-        btn.addEventListener("click",()=>{
+        btn.addEventListener("click", () => {
             start = i * perPage;
             renderCountryListOnUI();
-           
+
         })
     }
-    
-    
+
+
     // for(let i=0; i<countriesWithCodes.length; i+=perPage){
-        //     const btn = document.createElement("button");
-        //     btn.setAttribute("type","button");
-        //     paginate_numbers_container.appendChild(btn);
-        //     const btn_paginate = paginate_numbers_container.querySelectorAll("button");
-        //     btn.innerHTML = btn_paginate.length;
-        //     if(i === start){
-            //         btn.classList.add("active");
-            //     }
-            //     btn.addEventListener("click",()=>{
-                //        start = i
-                //         renderCountryListOnUI();
-                //         renderPaginationkeys();
-                //     })
-                // }
-            }
-            
+    //     const btn = document.createElement("button");
+    //     btn.setAttribute("type","button");
+    //     paginate_numbers_container.appendChild(btn);
+    //     const btn_paginate = paginate_numbers_container.querySelectorAll("button");
+    //     btn.innerHTML = btn_paginate.length;
+    //     if(i === start){
+    //         btn.classList.add("active");
+    //     }
+    //     btn.addEventListener("click",()=>{
+    //        start = i
+    //         renderCountryListOnUI();
+    //         renderPaginationkeys();
+    //     })
+    // }
+}

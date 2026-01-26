@@ -119,3 +119,26 @@
    }
  ```
 </details>
+<!-- async and promise method -->
+<details>
+ <summary>JavaScript promise and Async await</summary>
+
+ ```js
+    let pamentSuccess = true;
+function enroll(){
+    console.log("course enrollment is progress...");
+    const enrollmentPromise = new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            if(pamentSuccess){
+                resolve();
+            }else{
+                reject();
+            }
+        }, 1000);
+    });
+
+    return enrollmentPromise; // যদি function এর মধ্যে promise define করতে হয় 
+    // তাহলে সেই promise কে return করতেই হবে। 
+};
+ ```
+</details>
