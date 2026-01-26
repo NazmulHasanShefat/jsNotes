@@ -132,7 +132,7 @@ function enroll(){
             if(pamentSuccess){
                 resolve();
             }else{
-                reject();
+                reject("pament faild");
             }
         }, 1000);
     });
